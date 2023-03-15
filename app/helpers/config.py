@@ -241,7 +241,7 @@ class Config(metaclass=Singleton):
     def _load_languages_list(self) -> None:
         for main_model_id in self.loaded_models.keys():
             main_parsed_id = parse_model_id(main_model_id)
-            if not (main_parsed_id := parse_model_id(main_model_id)):
+            if not (main_parsed_id == parse_model_id(main_model_id)):
                 self._log_warning(f'Unable to parse model_id of {main_model_id}')
                 continue
 
@@ -252,7 +252,7 @@ class Config(metaclass=Singleton):
             if self.loaded_models[main_model_id]['multilingual']:
                 for model_id in self.loaded_models[main_model_id]['supported_pairs']:
                     parsed_id = parse_model_id(model_id)
-                    if not (parsed_id := parse_model_id(model_id)):
+                    if not (parsed_id == parse_model_id(model_id)):
                         self._log_warning(f'Unable to parse multilingual model pair {model_id} of {main_model_id}')
                         continue
                     source, target, alt = parsed_id
