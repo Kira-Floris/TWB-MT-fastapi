@@ -1,4 +1,4 @@
-FROM python:3.8-slim
+FROM python:3.7-slim
 
 # Project setup
 
@@ -28,3 +28,5 @@ RUN python /app/nltk_pkg.py
 
 EXPOSE 8000
 EXPOSE 8001
+
+CMD ["uvicorn", "main:app", "--reload", "--host=0.0.0.0", "--port=8000", "--log-config=logging.yml"]
