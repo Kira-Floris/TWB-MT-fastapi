@@ -12,6 +12,6 @@ def create_app() -> FastAPI:
 
     @app.on_event('startup')
     async def startup_event() -> None:
-        config = Config(load_all_models=True)
+        config = Config(load_all_models=True, config_file='config.json')
 
     return app

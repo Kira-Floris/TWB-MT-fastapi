@@ -308,7 +308,7 @@ class Config(metaclass=Singleton):
             )
         else:
             try:
-                with open(self.config_file, 'r') as jsonfile:
+                with open(self.config_file, 'r', encoding='utf8') as jsonfile:
                     self.config_data = json.load(jsonfile)
             except json.decoder.JSONDecodeError:
                 msg = 'Config file format broken. No models will be loaded.'

@@ -1,6 +1,7 @@
 models/*
 .DS_Store
 app/.DS_Store
+nllb-200-distilled-600M/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
