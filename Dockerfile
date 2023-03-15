@@ -24,3 +24,7 @@ WORKDIR /app
 
 COPY ./app/nltk_pkg.py /app/nltk_pkg.py
 RUN python /app/nltk_pkg.py
+
+
+EXPOSE 8000
+EXPOSE 8001
